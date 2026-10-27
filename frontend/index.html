@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>ProjectHub</h1>
+        <div id="user-info" style="display: none;">
+            <span id="welcome-msg"></span>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </nav>
+
+    <!-- Auth Section (Login/Register) -->
+    <div class="auth-container" id="auth-section">
+        <div class="auth-box">
+            <h2 id="auth-title">Login to ProjectHub</h2>
+            <input type="text" id="name" placeholder="Full Name" style="display: none;">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="handleAuth()" id="auth-btn">Login</button>
+            <p onclick="toggleAuth()" class="toggle-text">
+                <span id="toggle-msg">Don't have an account? Register</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div class="main-container" id="dashboard-section" style="display: none;">
+        
+        <!-- Create Project Box -->
+        <div class="create-box">
+            <h3>Create New Project</h3>
+            <input type="text" id="project-name" placeholder="Project Name">
+            <input type="text" id="project-desc" placeholder="Description (Optional)">
+            <button onclick="createProject()">Create Project</button>
+        </div>
+
+        <h2>My Projects</h2>
+        <div id="projects-list" class="projects-grid">
+            <!-- Projects will load here -->
+        </div>
+
+        <!-- Task Board (Hidden by default) -->
+        <div id="board-section" style="display: none;">
+            <div class="board-header">
+                <h2 id="current-project-name"></h2>
+                <button onclick="closeBoard()" class="btn-close">Back to Projects</button>
+            </div>
+            
+            <div class="add-task-box">
+                <input type="text" id="task-title" placeholder="Enter new task...">
+                <button onclick="createTask()">Add Task</button>
+            </div>
+
+            <div class="board-columns">
+                <div class="column">
+                    <h3>To Do</h3>
+                    <div id="todo-tasks" class="task-list"></div>
+                </div>
+                <div class="column">
+                    <h3>Done</h3>
+                    <div id="done-tasks" class="task-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
