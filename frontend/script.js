@@ -1,5 +1,4 @@
-// Backend పోర్ట్ 5001 ఉంది కాబట్టి ఇక్కడ అదే ఇచ్చాం
-const API_URL = 'http://localhost:5001/api';
+const API_URL = 'https://codealpha-projectmanagement-k7ii.onrender.com/api';
 let isLoginMode = true;
 let currentProjectId = null;
 
